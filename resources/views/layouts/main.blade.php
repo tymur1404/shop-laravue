@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Admin | Shop</title>
 
+    <link rel="stylesheet" href="{{ asset('adminlte/plugins/select2/css/select2.min.css') }}">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/fontawesome-free/css/all.min.css') }}">
@@ -13,7 +14,6 @@
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}">
 
-    <link href="{{ asset('adminlte/plugins/bootstrap/css/bootstrap-colorpicker.min.css') }}" rel="stylesheet">
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -136,7 +136,7 @@
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                     <li class="nav-item">
-                        <a href="pages/gallery.html" class="nav-link">
+                        <a href="{{ route('product.index') }}" class="nav-link">
                             <i class="nav-icon fa-solid fa-bag-shopping"></i>
                             <p>
                                 Orders
@@ -144,7 +144,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/gallery.html" class="nav-link">
+                        <a href="{{ route('product.index') }}" class="nav-link">
                             <i class="nav-icon fa-solid fa-barcode"></i>
                             <p>
                                 Products
@@ -223,6 +223,11 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('adminlte/dist/js/adminlte.js') }}"></script>
 
+<script src="{{ asset('adminlte/plugins/select2/js/select2.min.js') }}"></script>
+<script>
+    $('.tags').select2()
+    $('.colors').select2()
+</script>
 @yield('javascript')
 </body>
 </html>
