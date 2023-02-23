@@ -6,11 +6,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Products</h1>
+                    <h1 class="m-0">Groups</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item active">Products</li>
+                        <li class="breadcrumb-item active">Groups</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -23,15 +23,13 @@
         <div class="container-fluid">
             <!-- Small boxes (Stat box) -->
             <div class="row">
-
-                <form action="{{ route('product.update', $product->id) }}" method="post">
+                <form action="{{ route('group.store') }}" method="post">
                     @csrf
-                    @method('patch')
-
-                    @include('product.form_layouts.create_edit')
-
                     <div class="form-group">
-                        <input type="submit" class="btn btn-secondary" placeholder="Update" value="Update">
+                        <input type="text" class="form-control" name="title" placeholder="Group name">
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Add">
                     </div>
                 </form>
 

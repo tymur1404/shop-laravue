@@ -5,13 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tag extends Model
+class Group extends Model
 {
-    protected $table = 'tags';
+    protected $table = 'groups';
     protected $guarded = false;
-
-    public function products()
-    {
-        return $this->belongsToMany(Product::class);
-    }
 }

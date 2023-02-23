@@ -6,11 +6,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Products</h1>
+                    <h1 class="m-0">Groups</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item active">Products</li>
+                        <li class="breadcrumb-item active">Groups</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -25,28 +25,25 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-header d-flex p-3">
-                            <div class="mr-3">
-                                <a href="{{ route('product.edit', $product->id) }}" class="btn btn-secondary">Update</a>
-                            </div>
-                            <form action="{{ route('product.delete', $product->id) }}" method="post">
-                                @csrf
-                                @method('delete')
-                                <input type="submit"  class="btn btn-danger" value="Delete">
-                            </form>
+                        <div class="card-header">
+                            <a href="{{ route('group.create') }}" class="btn btn-primary">Add</a>
                         </div>
 
-                        <div class="card-body col-4 table-responsive p-0">
+                        <div class="card-body table-responsive p-0">
                             <table class="table table-hover text-nowrap">
+                                <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                </tr>
+                                </thead>
                                 <tbody>
-                                <tr>
-                                    <td><b>ID:</b></td>
-                                    <td>{{ $product->id }}</td>
-                                </tr>
-                                <tr>
-                                    <td><b>Product name:</b></td>
-                                    <td>{{ $product->title }}</td>
-                                </tr>
+                                @foreach( $groups as $group)
+                                    <tr>
+                                        <td>{{ $group->id }}</td>
+                                        <td><a href=" {{route('group.show', $group->id)}} ">{{ $group->title }}</a></td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
