@@ -24,6 +24,7 @@ class CreateProductsTable extends Migration
             $table->boolean('is_published')->default(true);
 
             $table->foreignId('category_id')->nullable()->index()->constrained('categories');
+            $table->foreignId('group_id')->nullable()->index()->constrained('groups');
 
             $table->timestamps();
         });

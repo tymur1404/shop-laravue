@@ -6,7 +6,7 @@ use App\Http\Resources\Category\CategoryResource;
 use App\Http\Resources\Color\ColorResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProductResource extends JsonResource
+class ProductMinResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -26,7 +26,7 @@ class ProductResource extends JsonResource
             'count' => $this->count,
             'is_published' => $this->is_published,
             'category' => new CategoryResource($this->category),
-            'colors' => ColorResource::collection($this->colors),
+            'colors' => ColorResource::collection($this->colors)
         ];
     }
 }

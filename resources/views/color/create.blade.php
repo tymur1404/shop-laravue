@@ -26,7 +26,7 @@
                 <form action="{{ route('color.store') }}" method="post">
                     @csrf
                     <div class="form-group">
-                        <input type="color" id="color" class="form-control" name="title" placeholder="Color name">
+                        <input type="color" id="color" class="form-control" name="title">
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" value="Add">
