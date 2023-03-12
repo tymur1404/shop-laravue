@@ -91,9 +91,12 @@
                                                     <li class="d-lg-block d-none"><a href="wishlist.html"
                                                                                      class="number"><i class="flaticon-heart"></i> <span
                                                         class="count">(2)</span> </a> </li>
-                                                    <li class="cartm"> <a href="#0" class="number cart-icon"> <i
-                                                        class="flaticon-shopping-cart"></i><span
-                                                        class="count">(5)</span> </a> </li>
+                                                    <li class="cartm">
+                                                        <router-link to="/cart" class="number cart-icon">
+                                                            <i class="flaticon-shopping-cart"></i>
+                                                            <span class="count">(5)</span>
+                                                        </router-link>
+                                                    </li>
                                                 </ul>
                                             </div>
                                         </div>
