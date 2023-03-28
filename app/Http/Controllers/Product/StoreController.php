@@ -7,7 +7,6 @@ use App\Http\Requests\Product\StoreRequest;
 use App\Models\ColorProduct;
 use App\Models\Product;
 use App\Models\ProductTag;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class StoreController extends Controller

@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Group;
 
 use App\Http\Controllers\Controller;
 use App\Models\Group;
-use Illuminate\Http\Request;
 
 class EditController extends Controller
 {

@@ -8,7 +8,6 @@ use App\Models\Color;
 use App\Models\Group;
 use App\Models\Product;
 use App\Models\Tag;
-use Illuminate\Http\Request;
 
 class EditController extends Controller
 {

@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
+    use HasFactory;
+
     protected $table = 'orders';
     protected $guarded = false;
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

@@ -7,7 +7,6 @@ use App\Models\Category;
 use App\Models\Color;
 use App\Models\Group;
 use App\Models\Tag;
-use Illuminate\Http\Request;
 
 class CreateController extends Controller
 {
