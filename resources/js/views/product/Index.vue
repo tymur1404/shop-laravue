@@ -19,68 +19,7 @@
                 </div>
             </div>
         </div>
-        <!--End Breadcrumb Style2-->
-        <!--Start Product Categories One-->
-        <section class="product-categories-one pb-60">
-            <div class="container">
-                <div class="row wow fadeInUp animated">
-                    <div class="col-xl-12">
-                        <div class="product-categories-one__inner">
-                            <ul>
-                                <li><a href="#0" class="img-box">
-                                    <div class="inner"><img src="/src/assets/images/shop/product-categories-v1-img1.png"
-                                                            alt=""/></div>
-                                </a>
-                                    <div class="title"><a href="#0">
-                                        <h6>Accessories</h6>
-                                    </a></div>
-                                </li>
-                                <li><a href="#0" class="img-box">
-                                    <div class="inner"><img src="/src/assets/images/shop/product-categories-v1-img2.png"
-                                                            alt=""/></div>
-                                </a>
-                                    <div class="title"><a href="#0">
-                                        <h6>Furnitures</h6>
-                                    </a></div>
-                                </li>
-                                <li><a href="#0" class="img-box">
-                                    <div class="inner"><img src="/src/assets/images/shop/product-categories-v1-img3.png"
-                                                            alt=""/></div>
-                                </a>
-                                    <div class="title"><a href="#0">
-                                        <h6>Jewellery</h6>
-                                    </a></div>
-                                </li>
-                                <li><a href="#0" class="img-box">
-                                    <div class="inner"><img src="/src/assets/images/shop/product-categories-v1-img4.png"
-                                                            alt=""/></div>
-                                </a>
-                                    <div class="title"><a href="#0">
-                                        <h6>Shoes</h6>
-                                    </a></div>
-                                </li>
-                                <li><a href="#0" class="img-box">
-                                    <div class="inner"><img src="/src/assets/images/shop/product-categories-v1-img5.png"
-                                                            alt=""/></div>
-                                </a>
-                                    <div class="title"><a href="#0">
-                                        <h6>Electronics</h6>
-                                    </a></div>
-                                </li>
-                                <li><a href="#0" class="img-box">
-                                    <div class="inner"><img src="/src/assets/images/shop/product-categories-v1-img6.png"
-                                                            alt=""/></div>
-                                </a>
-                                    <div class="title"><a href="#0">
-                                        <h6>Fashion</h6>
-                                    </a></div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+
         <!--End Product Categories One-->
         <!--Start product-grid-->
         <div class="product-grid pt-60 pb-120">
@@ -91,13 +30,7 @@
                             <button class="remove-sidebar d-lg-none d-block"><i
                                 class="flaticon-cross"> </i></button>
                             <div class="sidebar-holder">
-                                <form action="#0" class="footer-default__subscrib-form m-0 p-0 wow fadeInUp animated">
-                                    <div class="footer-input-box p-0 "><input type="email" placeholder="Email address"
-                                                                              name="email">
-                                        <button type="submit" class="subscribe_btn"><i
-                                            class="flaticon-magnifying-glass"></i></button>
-                                    </div>
-                                </form>
+
                                 <div class="single-sidebar-box mt-30 wow fadeInUp animated ">
                                     <h4>Select Categories</h4>
                                     <div class="checkbox-item">
@@ -155,19 +88,7 @@
                                     </div>
                                     <div
                                         class="right-box justify-content-md-between justify-content-center wow fadeInUp animated">
-                                        <div class="short-by">
-                                            <div class="select-box">
-                                                <select class="wide">
-                                                    <option data-display="Short by latest">Featured</option>
-                                                    <option value="1">Best selling</option>
-                                                    <option value="2">Alphabetically, A-Z</option>
-                                                    <option value="3">Alphabetically, Z-A</option>
-                                                    <option value="3">Price, low to high</option>
-                                                    <option value="3">Price, high to low</option>
-                                                    <option value="3">Date, old to new</option>
-                                                </select>
-                                            </div>
-                                        </div>
+
                                         <div class="product-view-style d-flex justify-content-md-between justify-content-center">
                                             <ul class="nav nav-pills" id="pills-tab" role="tablist">
                                                 <li class="nav-item" role="presentation">
@@ -213,18 +134,7 @@
                                                            class="addcart btn--primary style2"
                                                            @click.prevent="addToCart(product)">
                                                             Add To Cart </a>
-                                                        <div class="products-grid__usefull-links">
-                                                            <ul>
-                                                                <li><a href="wishlist.html"> <i class="flaticon-heart">
-                                                                </i> <span>
-                                                                            wishlist</span> </a></li>
-                                                                <li><a href="compare.html"> <i
-                                                                    class="flaticon-left-and-right-arrows"></i>
-                                                                    <span>
-                                                                            compare</span> </a></li>
 
-                                                            </ul>
-                                                        </div>
                                                     </div>
                                                     <div class="color-varient">
                                                         <a v-for="color in product.colors"
@@ -378,7 +288,7 @@ export default {
         },
 
         getProducts(page = 1) {
-            this.axios.post('http://localhost:8876/api/products',{
+            this.axios.post('/api/products',{
                 'categories': this.categories,
                 'colors': this.colors,
                 'tags': this.tags,
@@ -388,17 +298,15 @@ export default {
                 .then(res => {
                     this.products = res.data.data;
                     this.pagination = res.data.meta;
-                    console.log(res);
                 })
                 .finally(v => {
                     $(document).trigger('changed')
                 })
         },
         getFilterList() {
-            this.axios.get('http://localhost:8876/api/products/filters')
+            this.axios.get('/api/products/filters')
                 .then(res => {
                     this.filterList = res.data
-                    console.log(res.data);
 
                     //  Price Filter
                     if ($("#price-range").length) {
@@ -413,7 +321,6 @@ export default {
                         });
                         $("#priceRange").val("$" + $("#price-range").slider("values", 0) + " - $" + $("#price-range").slider("values", 1));
                     }
-                    ;
                 })
                 .finally(v => {
                     $(document).trigger('changed')
