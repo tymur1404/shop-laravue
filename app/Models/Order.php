@@ -12,7 +12,7 @@ class Order extends Model
     protected $table = 'orders';
     protected $guarded = false;
 
-    public function user()
+    public function user(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(User::class);
     }

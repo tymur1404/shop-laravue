@@ -8,7 +8,7 @@ use App\Models\Group;
 
 class StoreController extends Controller
 {
-    public function __invoke(StoreRequest $request)
+    public function __invoke(StoreRequest $request) : \Illuminate\Http\RedirectResponse
     {
         $data = $request->validated();
 

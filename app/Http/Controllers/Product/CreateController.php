@@ -10,7 +10,7 @@ use App\Models\Tag;
 
 class CreateController extends Controller
 {
-    public function __invoke()
+    public function __invoke() : \Illuminate\Contracts\View\View
     {
         $tags = Tag::all();
         $colors = Color::all();

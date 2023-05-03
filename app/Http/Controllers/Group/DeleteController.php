@@ -7,7 +7,7 @@ use App\Models\Group;
 
 class DeleteController extends Controller
 {
-    public function __invoke(Group $group)
+    public function __invoke(Group $group) : \Illuminate\Http\RedirectResponse
     {
         $group->delete();
 

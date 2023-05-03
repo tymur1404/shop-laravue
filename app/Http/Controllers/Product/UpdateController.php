@@ -8,7 +8,7 @@ use App\Models\Product;
 
 class UpdateController extends Controller
 {
-    public function __invoke(UpdateRequest $request, Product $product)
+    public function __invoke(UpdateRequest $request, Product $product) : \Illuminate\Contracts\View\View
     {
         $data = $request->validated();
         $product->update($data);

@@ -25,7 +25,7 @@ abstract class AbstractFilter implements FilterInterface
      * @param Builder $builder
      * @return void
      */
-    public function apply(Builder $builder)
+    public function apply(Builder $builder) : void
     {
         $this->before($builder);
 

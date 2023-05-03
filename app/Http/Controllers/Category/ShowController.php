@@ -7,7 +7,7 @@ use App\Models\Category;
 
 class ShowController extends Controller
 {
-    public function __invoke(Category $category)
+    public function __invoke(Category $category) : \Illuminate\Contracts\View\View
     {
         return view('category.show', compact('category'));
     }

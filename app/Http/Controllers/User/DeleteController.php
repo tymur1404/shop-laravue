@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class DeleteController extends Controller
 {
-    public function __invoke(User $user)
+    public function __invoke(User $user) : \Illuminate\Http\RedirectResponse
     {
         $user->delete();
 

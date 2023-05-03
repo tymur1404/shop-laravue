@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class UpdateController extends Controller
 {
-    public function __invoke(UpdateRequest $request, Tag $tag)
+    public function __invoke(UpdateRequest $request, Tag $tag) : \Illuminate\Contracts\View\View
     {
         $data = $request->validated();
         $tag->update($data);

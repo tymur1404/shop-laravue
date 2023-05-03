@@ -8,7 +8,7 @@ use App\Models\Order;
 
 class ShowController extends Controller
 {
-    public function __invoke(Order $order)
+    public function __invoke(Order $order) : \Illuminate\Contracts\View\View
     {
         $order = $order->load('user');
         $products = json_decode($order->products, true);

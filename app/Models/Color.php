@@ -12,7 +12,7 @@ class Color extends Model
     protected $table = 'colors';
     protected $guarded = false;
 
-    public function products()
+    public function products(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
         return $this->belongsToMany(Product::class);
     }

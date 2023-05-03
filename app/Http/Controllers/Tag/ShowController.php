@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class ShowController extends Controller
 {
-    public function __invoke(Tag $tag)
+    public function __invoke(Tag $tag) : \Illuminate\Contracts\View\View
     {
         return view('tag.show', compact('tag'));
     }

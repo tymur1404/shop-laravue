@@ -7,7 +7,7 @@ use App\Models\Product;
 
 class ShowController extends Controller
 {
-    public function __invoke(Product $product)
+    public function __invoke(Product $product) : \Illuminate\Contracts\View\View
     {
         return view('product.show', compact('product'));
     }

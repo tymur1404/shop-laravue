@@ -7,7 +7,7 @@ use App\Models\Group;
 
 class EditController extends Controller
 {
-    public function __invoke(Group  $group)
+    public function __invoke(Group  $group) : \Illuminate\Contracts\View\View
     {
         return view('group.edit', compact('group'));
     }

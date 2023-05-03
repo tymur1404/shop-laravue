@@ -18,7 +18,7 @@ class User extends Authenticatable
     protected $table = 'users';
     protected $guarded = false;
 
-    static function getGenders()
+    static function getGenders(): array
     {
         return [
             self::GENDER_MALE => 'Male',
@@ -26,7 +26,7 @@ class User extends Authenticatable
         ];
     }
 
-    public function getGenderTitleAttribute()
+    public function getGenderTitleAttribute(): string
     {
         return self::getGenders()[$this->gender];
     }
@@ -50,7 +50,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function orders()
+    public function orders(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(Order::class);
     }

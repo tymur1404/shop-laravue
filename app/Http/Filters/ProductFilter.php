@@ -30,7 +30,7 @@ class ProductFilter extends AbstractFilter
      * @param $value
      * @return void
      */
-    protected function categories(Builder $builder, $value)
+    protected function categories(Builder $builder, $value) : void
     {
         $builder->whereIn('category_id', $value);
     }
@@ -40,7 +40,7 @@ class ProductFilter extends AbstractFilter
      * @param $value
      * @return void
      */
-    protected function colors(Builder $builder, $value)
+    protected function colors(Builder $builder, $value) : void
     {
         $builder->whereHas('colors', function($b) use ($value){
             $b->whereIn('color_id', $value);
@@ -52,7 +52,7 @@ class ProductFilter extends AbstractFilter
      * @param $value
      * @return void
      */
-    protected function prices(Builder $builder, $value)
+    protected function prices(Builder $builder, $value) : void
     {
         $builder->whereBetween('price',$value);
     }
@@ -62,7 +62,7 @@ class ProductFilter extends AbstractFilter
      * @param $value
      * @return void
      */
-    protected function tags(Builder $builder, $value)
+    protected function tags(Builder $builder, $value) : void
     {
         $builder->whereHas('tags', function($b) use ($value){
             $b->whereIn('tag_id', $value);

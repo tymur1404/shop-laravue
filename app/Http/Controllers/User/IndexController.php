@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    public function __invoke() {
+    public function __invoke() : \Illuminate\Contracts\View\View
+    {
         $users = User::all();
         return view('user.index', compact('users'));
     }

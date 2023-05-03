@@ -7,7 +7,8 @@ use App\Models\Group;
 
 class IndexController extends Controller
 {
-    public function __invoke() {
+    public function __invoke() : \Illuminate\Contracts\View\View
+    {
         $groups = Group::all();
         return view('group.index', compact('groups'));
     }

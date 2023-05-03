@@ -9,7 +9,7 @@ use App\Models\Tag;
 
 class FilterListController
 {
-    public function __invoke(Product $product)
+    public function __invoke(Product $product) : \Illuminate\Http\JsonResponse
     {
         $categries = Category::all();
         $colors = Color::all();

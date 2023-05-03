@@ -7,9 +7,10 @@ use App\Models\Order;
 
 class IndexController extends Controller
 {
-    public function __invoke() {
+    public function __invoke()  : \Illuminate\Contracts\View\View
+    {
         $orders = Order::with('user')->get();
-        //dd($orders);
+
         return view('order.index', compact('orders'));
     }
 }

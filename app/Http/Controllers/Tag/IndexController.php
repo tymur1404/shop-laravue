@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    public function __invoke() {
+    public function __invoke() : \Illuminate\Contracts\View\View
+    {
         $tags = Tag::all();
         return view('tag.index', compact('tags'));
     }

@@ -7,7 +7,7 @@ use App\Models\Color;
 
 class DeleteController extends Controller
 {
-    public function __invoke(Color $color)
+    public function __invoke(Color $color) : \Illuminate\Http\RedirectResponse
     {
         $color->delete();
 

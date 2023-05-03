@@ -7,7 +7,8 @@ use App\Models\Product;
 
 class IndexController extends Controller
 {
-    public function __invoke() {
+    public function __invoke() : \Illuminate\Contracts\View\View
+    {
         $products = Product::all();
         return view('product.index', compact('products'));
     }

@@ -11,7 +11,7 @@ use App\Models\Tag;
 
 class EditController extends Controller
 {
-    public function __invoke(Product  $product)
+    public function __invoke(Product  $product) : \Illuminate\Contracts\View\View
     {
         $tags = Tag::all();
         $colors = Color::all();

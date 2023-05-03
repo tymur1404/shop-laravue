@@ -7,7 +7,7 @@ use App\Models\Category;
 
 class EditController extends Controller
 {
-    public function __invoke(Category  $category)
+    public function __invoke(Category  $category) : \Illuminate\Contracts\View\View
     {
         return view('category.edit', compact('category'));
     }

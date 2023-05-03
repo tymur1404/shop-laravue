@@ -7,7 +7,7 @@ use App\Models\Product;
 
 class DeleteController extends Controller
 {
-    public function __invoke(Product $product)
+    public function __invoke(Product $product) : \Illuminate\Http\RedirectResponse
     {
         $product->delete();
 

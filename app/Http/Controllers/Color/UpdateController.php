@@ -8,7 +8,7 @@ use App\Models\Color;
 
 class UpdateController extends Controller
 {
-    public function __invoke(UpdateRequest $request, Color $color)
+    public function __invoke(UpdateRequest $request, Color $color) : \Illuminate\Contracts\View\View
     {
         $data = $request->validated();
         $color->update($data);

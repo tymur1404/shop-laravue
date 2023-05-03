@@ -10,7 +10,7 @@ use App\Models\Product;
 
 class IndexController extends Controller
 {
-    public function __invoke(IndexRequest $request)
+    public function __invoke(IndexRequest $request) : \Illuminate\Http\Resources\Json\ResourceCollection
     {
         $data = $request->validated();
 

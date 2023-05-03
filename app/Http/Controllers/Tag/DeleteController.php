@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class DeleteController extends Controller
 {
-    public function __invoke(Tag $tag)
+    public function __invoke(Tag $tag) : \Illuminate\Http\RedirectResponse
     {
         $tag->delete();
 

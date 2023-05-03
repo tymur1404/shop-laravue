@@ -7,7 +7,7 @@ use App\Models\Color;
 
 class EditController extends Controller
 {
-    public function __invoke(Color  $color)
+    public function __invoke(Color  $color) : \Illuminate\Contracts\View\View
     {
         return view('color.edit', compact('color'));
     }
