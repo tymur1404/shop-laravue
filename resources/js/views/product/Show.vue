@@ -571,7 +571,7 @@ export default {
     methods: {
 
         getProduct() {
-            this.axios.get(`http://localhost:8876/api/product/${this.$route.params.id}`)
+            this.axios.get(`/api/product/${this.$route.params.id}`)
                 .then(res => {
                     console.log(res);
                     this.product = res.data.data;

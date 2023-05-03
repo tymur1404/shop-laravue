@@ -166,7 +166,7 @@ export default {
     methods: {
 
         storeOrder(){
-            this.axios.post('http://localhost:8876/api/orders',{
+            this.axios.post('/api/orders',{
                 'products': this.products,
                 'name': this.name,
                 'email': this.email,

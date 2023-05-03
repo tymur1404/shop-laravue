@@ -30,7 +30,6 @@
     <!-- Style Css -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 
 @yield('content')
@@ -50,6 +49,7 @@
 <script src="{{ asset('assets/js/plugin/wow.v1.3.0.min.js') }}"></script> <!-- Wow js -->
 <script src="{{ asset('assets/js/plugin/jquery.countdown.min.js') }}"></script> <!-- Main js -->
 <script src="{{ asset('assets/js/main.js') }}"></script>
+<script src="{{ asset('js/app.js') }}" defer></script>
 
 <!--==== Js Scripts End ====-->
 
