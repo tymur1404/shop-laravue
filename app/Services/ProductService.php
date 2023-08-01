@@ -1,30 +1,34 @@
 <?php
 
-namespace App\Http\Controllers\Product;
+namespace App\Services;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Product\StoreRequest;
 use App\Models\ColorProduct;
 use App\Models\Product;
 use App\Models\ProductTag;
 use Illuminate\Support\Facades\Storage;
 
-class StoreController extends Controller
+class ProductService
 {
-    public function __invoke(StoreRequest $request) : \Illuminate\Http\RedirectResponse
+    public function createOrUpdate(array $data, Product $product = null): void
     {
-        $data = $request->validated();
-        $data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
+        if(isset($data['preview_image']))
+        {
+            $data['preview_image'] = Storage::disk('public')->put('/images', $data['preview_image']);
+        }
 
         $tagsIds = $data['tags'];
         $colorsIds = $data['colors'];
 
         unset($data['tags'], $data['colors']);
 
-        $product = Product::firstOrCreate([
-            'title' => $data['title'],
+        if ($product) {
+            $product->update($data);
+        } else {
+            $product = Product::firstOrCreate([
+                'title' => $data['title'],
 
-        ], $data);
+            ], $data);
+        }
 
         foreach ($tagsIds as $tagId) {
             ProductTag::firstOrCreate([
@@ -39,9 +43,6 @@ class StoreController extends Controller
                 'product_id' => $product->id,
                 'color_id' => $colorId,
             ]);
-
         }
-
-        return redirect()->route('product.index');
     }
 }

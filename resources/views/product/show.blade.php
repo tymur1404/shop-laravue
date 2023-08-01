@@ -29,7 +29,7 @@
                             <div class="mr-3">
                                 <a href="{{ route('product.edit', $product->id) }}" class="btn btn-secondary">Update</a>
                             </div>
-                            <form action="{{ route('product.delete', $product->id) }}" method="post">
+                            <form action="{{ route('product.destroy', $product->id) }}" method="post">
                                 @csrf
                                 @method('delete')
                                 <input type="submit"  class="btn btn-danger" value="Delete">

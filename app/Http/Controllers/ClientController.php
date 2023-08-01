@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Group;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 
-class CreateController extends Controller
+class ClientController extends Controller
 {
     public function __invoke() : \Illuminate\Contracts\View\View
     {
-        return view('group.create');
+        return view('client.main.index',);
     }
 }

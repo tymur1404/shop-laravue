@@ -29,7 +29,7 @@
                             <div class="mr-3">
                                 <a href="{{ route('tag.edit', $tag->id) }}" class="btn btn-secondary">Update</a>
                             </div>
-                            <form action="{{ route('tag.delete', $tag->id) }}" method="post">
+                            <form action="{{ route('tag.destroy', $tag->id) }}" method="post">
                                 @csrf
                                 @method('delete')
                                 <input type="submit"  class="btn btn-danger" value="Delete">

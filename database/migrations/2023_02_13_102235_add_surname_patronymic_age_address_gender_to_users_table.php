@@ -18,7 +18,7 @@ class AddSurnamePatronymicAgeAddressGenderToUsersTable extends Migration
             $table->string('patronymic')->nullable();
             $table->string('age')->nullable();
             $table->string('address')->nullable();
-            $table->unsignedSmallInteger('gender')->nullable();
+            $table->enum('gender', ['male', 'female'])->nullable();
         });
     }
 

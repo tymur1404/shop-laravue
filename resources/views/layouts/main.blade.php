@@ -160,14 +160,6 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ route('group.index') }}" class="nav-link">
-                            <i class="nav-icon fa-solid fa-list"></i>
-                            <p>
-                                Groups
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a href="{{ route('tag.index') }}" class="nav-link">
                             <i class="nav-icon fa-solid fa-tag"></i>
                             <p>

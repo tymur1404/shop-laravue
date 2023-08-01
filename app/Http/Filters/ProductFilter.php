@@ -6,15 +6,11 @@ use Illuminate\Database\Eloquent\Builder;
 
 class ProductFilter extends AbstractFilter
 {
-
     const CATEGORIES = 'categories';
     const COLORS = 'colors';
     const PRICES = 'prices';
     const TAGS = 'tags';
 
-    /**
-     * @return array
-     */
     protected function getCallback(): array
     {
         return [
@@ -25,21 +21,11 @@ class ProductFilter extends AbstractFilter
         ];
     }
 
-    /**
-     * @param Builder $builder
-     * @param $value
-     * @return void
-     */
-    protected function categories(Builder $builder, $value) : void
+    protected function categories(Builder $builder, int $value) : void
     {
         $builder->whereIn('category_id', $value);
     }
 
-    /**
-     * @param Builder $builder
-     * @param $value
-     * @return void
-     */
     protected function colors(Builder $builder, $value) : void
     {
         $builder->whereHas('colors', function($b) use ($value){
@@ -47,21 +33,12 @@ class ProductFilter extends AbstractFilter
         });
     }
 
-    /**
-     * @param Builder $builder
-     * @param $value
-     * @return void
-     */
-    protected function prices(Builder $builder, $value) : void
+
+    protected function prices(Builder $builder, array $value) : void
     {
-        $builder->whereBetween('price',$value);
+        $builder->whereBetween('price', $value);
     }
 
-    /**
-     * @param Builder $builder
-     * @param $value
-     * @return void
-     */
     protected function tags(Builder $builder, $value) : void
     {
         $builder->whereHas('tags', function($b) use ($value){
