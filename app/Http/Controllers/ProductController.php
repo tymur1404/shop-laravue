@@ -15,12 +15,10 @@ use Illuminate\Http\RedirectResponse;
 
 class ProductController extends Controller
 {
-    private ProductService $productService;
 
-    public function __construct(ProductService $productService)
-    {
-        $this->productService = $productService;
-    }
+    public function __construct(private ProductService  $productService)
+    {}
+
     public function index() : View
     {
         $products = Product::all();

@@ -6,16 +6,12 @@ use Illuminate\Database\Eloquent\Builder;
 
 abstract class AbstractFilter implements FilterInterface
 {
-    private $queryParams = [];
-
-    public function __construct(array $queryParams)
-    {
-        $this->queryParams = $queryParams;
-    }
+    public function __construct(private array $queryParams)
+    {}
 
     abstract protected function getCallback(): array;
 
-    public function apply(Builder $builder) : mixed
+    public function apply(Builder $builder): void
     {
         $this->before($builder);
 
