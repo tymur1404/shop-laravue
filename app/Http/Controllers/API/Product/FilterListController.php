@@ -11,7 +11,7 @@ class FilterListController
 {
     public function __invoke(Product $product) : \Illuminate\Http\JsonResponse
     {
-        $categries = Category::all();
+        $categories = Category::all();
         $colors = Color::all();
         $tags = Tag::all();
 
@@ -19,7 +19,7 @@ class FilterListController
         $minPrice = Product::orderBy('price', 'ASC')->first()->price;
 
         $result = [
-            'categories' => $categries,
+            'categories' => $categories,
             'colors' => $colors,
             'tags' => $tags,
             'price' => [
